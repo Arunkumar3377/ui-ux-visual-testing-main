@@ -1,0 +1,96 @@
+import React, { useState, useEffect } from 'react';
+import { Page, TestResult } from './types';
+import { INITIAL_TEST_REPORTS } from './data/sampleData';
+import { Theme, getInitialTheme, applyTheme } from './utils/theme';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { HomePage } from './components/HomePage';
+import { AboutPage } from './components/AboutPage';
+import { FeaturesPage } from './components/FeaturesPage';
+import { VisualTestingPage } from './components/VisualTestingPage';
+import { TestReportPage } from './components/TestReportPage';
+import { ContactPage } from './components/ContactPage';
+
+export default function App() {
+  const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [theme, setTheme] = useState<Theme>('light');
+  const [reports, setReports] = useState<TestResult[]>(INITIAL_TEST_REPORTS);
+  const [activeTestingUrl, setActiveTestingUrl] = useState<string>('https://example.com');
+
+  useEffect(() => {
+    const initTheme = getInitialTheme();
+    setTheme(initTheme);
+    applyTheme(initTheme);
+  }, []);
+
+  const handleToggleTheme = () => {
+    const newTheme: Theme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    applyTheme(newTheme);
+  };
+
+  const handleNavigate = (page: Page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleQuickStartTest = (url: string) => {
+    setActiveTestingUrl(url);
+    setCurrentPage('visual-testing');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSaveTestResult = (newResult: TestResult) => {
+    setReports((prev) => [newResult, ...prev]);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200 flex flex-col justify-between">
+      
+      {/* Top Navbar */}
+      <Navbar
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
+        theme={theme}
+        onToggleTheme={handleToggleTheme}
+      />
+
+      {/* Main Active View Area */}
+      <main className="flex-grow">
+        {currentPage === 'home' && (
+          <HomePage
+            onNavigate={handleNavigate}
+            onQuickStartTest={handleQuickStartTest}
+          />
+        )}
+
+        {currentPage === 'about' && <AboutPage />}
+
+        {currentPage === 'features' && (
+          <FeaturesPage onNavigate={handleNavigate} />
+        )}
+
+        {currentPage === 'visual-testing' && (
+          <VisualTestingPage
+            onNavigate={handleNavigate}
+            onSaveTestResult={handleSaveTestResult}
+            initialUrl={activeTestingUrl}
+          />
+        )}
+
+        {currentPage === 'test-report' && (
+          <TestReportPage
+            reports={reports}
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {currentPage === 'contact' && <ContactPage />}
+      </main>
+
+      {/* Footer */}
+      <Footer onNavigate={handleNavigate} />
+
+    </div>
+  );
+}

@@ -1,0 +1,200 @@
+import React from 'react';
+import {
+  Layout,
+  Users,
+  Eye,
+  CheckCircle2,
+  Zap,
+  TrendingUp,
+  ShieldCheck,
+  MousePointer,
+  Palette,
+  Layers,
+  Sparkles,
+} from 'lucide-react';
+
+export const AboutPage: React.FC = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+      
+      {/* Header Banner */}
+      <div className="text-center max-w-3xl mx-auto space-y-3">
+        <span className="px-3.5 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-xs font-bold uppercase tracking-wider">
+          Knowledge Base & Conceptual Foundations
+        </span>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Understanding UI, UX, and Visual Testing
+        </h1>
+        <p className="text-base text-slate-600 dark:text-slate-300">
+          Learn the foundational concepts behind modern digital interface architecture and why automated visual testing is essential for software quality.
+        </p>
+      </div>
+
+      {/* 3 Core Pillars: What is UI, What is UX, What is Visual Testing */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        {/* Pillar 1: What is UI */}
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all space-y-4">
+          <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+            <Layout className="w-6 h-6" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+            What is UI? (User Interface)
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <strong>User Interface (UI)</strong> refers to the visual and graphic layout of an application. It encompasses every visual element the user interacts with on screen—including color palettes, typography hierarchy, buttons, icons, spacing grid, animations, and input fields.
+          </p>
+          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Visual Design & Color Harmony</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Typography Scaling & Line-Height</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Component Spacing & Padding Math</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Pillar 2: What is UX */}
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all space-y-4">
+          <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+            <Users className="w-6 h-6" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+            What is UX? (User Experience)
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <strong>User Experience (UX)</strong> focuses on the user's overall journey, ease of navigation, and emotional satisfaction when interacting with a system. It evaluates task completion speed, cognitive load, intuitive information architecture, and accessibility.
+          </p>
+          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Intuitive Navigation & Information Architecture</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Click Hit Target & Touch Surface Ergonomics</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Task Friction & Error Recovery Flows</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Pillar 3: What is Visual Testing */}
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all space-y-4">
+          <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+            <Eye className="w-6 h-6" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+            What is Visual Testing?
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <strong>Visual Testing</strong> (or Visual Regression Testing) evaluates the visual output of an app against expected reference baseline designs. It catches unintended layout shifts, broken css styles, text overlaps, or color mismatches across multiple device screens.
+          </p>
+          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Pixel-by-Pixel Screenshot Comparison</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>DOM Layout Shift & Overflow Detection</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span>Multi-Viewport Cross-Device Audit</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Benefits Section */}
+      <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 space-y-8">
+        <div className="max-w-2xl space-y-2">
+          <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-bold uppercase tracking-wider">
+            Key Advantages
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+            Benefits of UI/UX Visual Testing
+          </h2>
+          <p className="text-sm text-slate-300">
+            Why leading engineering teams and QA departments adopt automated visual testing in their deployment pipelines.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div className="p-5 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+              <Zap className="w-5 h-5" />
+            </div>
+            <h4 className="text-base font-bold text-white">Prevent UI Regressions</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Catches accidental styling bugs or displaced elements before code reaches production servers.
+            </p>
+          </div>
+
+          <div className="p-5 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <h4 className="text-base font-bold text-white">WCAG 2.1 Accessibility</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Guarantees high contrast readability and keyboard navigation for users with visual disabilities.
+            </p>
+          </div>
+
+          <div className="p-5 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">
+              <TrendingUp className="w-5 h-5" />
+            </div>
+            <h4 className="text-base font-bold text-white">Increase Conversion Rates</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Clean visual design and clear navigation paths reduce bounce rates and increase user trust.
+            </p>
+          </div>
+
+          <div className="p-5 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+              <MousePointer className="w-5 h-5" />
+            </div>
+            <h4 className="text-base font-bold text-white">Flawless Mobile Viewports</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Ensures touch target sizes and line wrapping function perfectly across all mobile devices.
+            </p>
+          </div>
+
+          <div className="p-5 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+              <Layers className="w-5 h-5" />
+            </div>
+            <h4 className="text-base font-bold text-white">Automated QA Velocity</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Replaces tedious manual visual inspection with automated, reproducible test reports.
+            </p>
+          </div>
+
+          <div className="p-5 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <h4 className="text-base font-bold text-white">Design-System Consistency</h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Verifies that design system tokens (colors, font weights, border radiuses) remain consistent.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  );
+};
